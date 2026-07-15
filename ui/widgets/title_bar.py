@@ -5,6 +5,9 @@ from ui.widgets.hover_close_button import HoverCloseButton
 from PySide6.QtMultimedia import QMediaPlayer, QAudioOutput
 import random
 
+from utils.path import resource_path
+
+
 class TitleBar(QWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -15,7 +18,7 @@ class TitleBar(QWidget):
         # Image belongs to the main window, not the title bar
         self.jesus_image = QLabel(self.parent)
 
-        pixmap = QPixmap("assets/images/memes/jesus.png")
+        pixmap = QPixmap(resource_path("assets/images/memes/jesus.png"))
 
         if pixmap.isNull():
             print("Failed to load Jesus image")

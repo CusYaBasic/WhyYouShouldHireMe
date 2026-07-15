@@ -8,6 +8,9 @@ from PySide6.QtWidgets import (
 from PySide6.QtGui import QPixmap
 from PySide6.QtCore import Qt, Signal
 
+from utils.path import resource_path
+
+
 class SlideshowPage(QWidget):
 
     finished = Signal()
@@ -93,8 +96,7 @@ class SlideshowPage(QWidget):
             self.current_index
         ]
 
-        pixmap = QPixmap(
-            slide["image"]
+        pixmap = QPixmap(resource_path(slide["image"])
         )
         self.image.setPixmap(
             pixmap.scaled(

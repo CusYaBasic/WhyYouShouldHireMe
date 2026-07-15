@@ -2,6 +2,9 @@ from PySide6.QtWidgets import QLabel
 from PySide6.QtGui import QPixmap, QPainter, QPainterPath
 from PySide6.QtCore import Qt
 
+from utils.path import resource_path
+
+
 class RoundedImageLabel(QLabel):
     def __init__(self, image_path, radius=20):
         super().__init__()
@@ -11,7 +14,7 @@ class RoundedImageLabel(QLabel):
         )
 
     def create_rounded_pixmap(self, image_path, radius):
-        pixmap = QPixmap(image_path)
+        pixmap = QPixmap(resource_path(image_path))
         rounded = QPixmap(pixmap.size())
         rounded.fill(Qt.GlobalColor.transparent)
         painter = QPainter(rounded)

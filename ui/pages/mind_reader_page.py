@@ -8,6 +8,9 @@ from PySide6.QtWidgets import (
 from PySide6.QtGui import QPixmap
 from PySide6.QtCore import Qt, QPropertyAnimation, QPoint, Signal
 
+from utils.path import resource_path
+
+
 class MindReaderPage(QWidget):
 
     back_clicked = Signal()
@@ -76,9 +79,9 @@ class MindReaderPage(QWidget):
             self
         )
 
-        pixmap = QPixmap(
-            "assets/images/memes/troll.png"
-        )
+        pixmap = QPixmap(resource_path("assets/images/memes/troll.png"
+        ))
+
 
         self.troll.setPixmap(
             pixmap.scaled(

@@ -4,6 +4,9 @@ from PySide6.QtGui import QPixmap
 from PySide6.QtMultimedia import QMediaPlayer, QAudioOutput
 from PySide6.QtCore import QUrl
 
+from utils.path import resource_path
+
+
 class MenuCard(QWidget):
 
     clicked = Signal()
@@ -13,7 +16,7 @@ class MenuCard(QWidget):
 
         self.setFixedSize(250, 250)
         self.image = QLabel()
-        pixmap = QPixmap(image)
+        pixmap = QPixmap(resource_path(image))
         self.image.setPixmap(
             pixmap.scaled(
                 100,

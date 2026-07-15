@@ -2,6 +2,9 @@ from PySide6.QtWidgets import QPushButton
 from PySide6.QtGui import QPixmap, QIcon
 from PySide6.QtCore import QSize
 
+from utils.path import resource_path
+
+
 class PlayerCard(QPushButton):
 
     def __init__(self, name, image):
@@ -12,7 +15,7 @@ class PlayerCard(QPushButton):
             150,
             150
         )
-        pixmap = QPixmap(image)
+        pixmap = QPixmap(resource_path(image))
         self.setIcon(
             QIcon(pixmap)
         )

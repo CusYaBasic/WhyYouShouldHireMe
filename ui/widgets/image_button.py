@@ -4,6 +4,9 @@ from PySide6.QtCore import Qt, QUrl
 from PySide6.QtMultimedia import QMediaPlayer, QAudioOutput
 from pathlib import Path
 
+from utils.path import resource_path
+
+
 class ImageButton(QPushButton):
 
     def __init__(self, title, image):
@@ -28,7 +31,7 @@ class ImageButton(QPushButton):
 
         # Background image
         self.image = QLabel(self)
-        pixmap = QPixmap(image)
+        pixmap = QPixmap(resource_path(image))
         self.image.setPixmap(
             pixmap.scaled(
                 51,
