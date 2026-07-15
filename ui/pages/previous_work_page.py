@@ -14,7 +14,6 @@ class PreviousWorkPage(SlideshowPage):
                     "with both Blueprints and C++. I have created mechanics, UI systems, "
                     "plugins and gameplay frameworks."
             },
-
             {
                 "image": "assets/images/work/humanity_remains.png",
                 "title": "Humanity Remains",
@@ -23,7 +22,6 @@ class PreviousWorkPage(SlideshowPage):
                     "I worked on gameplay systems, player mechanics, networking concepts "
                     "and overall game architecture."
             },
-
             {
                 "image": "assets/images/work/lostlands.png",
                 "title": "Lost Lands",
@@ -32,7 +30,6 @@ class PreviousWorkPage(SlideshowPage):
                     "Built with MonoGame, focusing on systems such as inventory, "
                     "skills, economy and multiplayer architecture."
             },
-
             {
                 "image": "assets/images/work/lensify.png",
                 "title": "Lensify",
@@ -41,7 +38,6 @@ class PreviousWorkPage(SlideshowPage):
                     "OBS workflows. Designed to make virtual avatars and effects "
                     "accessible for content creators."
             },
-
             {
                 "image": "assets/images/work/developer_tools.png",
                 "title": "Developer Tools",
@@ -51,7 +47,6 @@ class PreviousWorkPage(SlideshowPage):
                     "to solve real development problems."
             }
         ]
-
 
         super().__init__(
             slides

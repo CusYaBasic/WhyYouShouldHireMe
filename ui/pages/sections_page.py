@@ -1,8 +1,6 @@
 from PySide6.QtWidgets import QWidget, QGridLayout
 from PySide6.QtCore import Signal
-
 from ui.widgets.image_button import ImageButton
-
 
 class SectionsPage(QWidget):
 
@@ -98,9 +96,7 @@ class SectionsPage(QWidget):
                 row += 1
 
     def update_unlocks(self, unlocks):
-
         for title, button in self.buttons.items():
-
             if title in unlocks:
                 button.setEnabled(
                     unlocks[title]

@@ -37,18 +37,12 @@ class MiniGamePage(QWidget):
         }
 
         self.selected_player = None
-
-
         self.layout = QVBoxLayout(self)
-
         self.layout.setAlignment(
             Qt.AlignmentFlag.AlignCenter
         )
 
-
         self.create_player_select()
-
-
 
     def create_player_select(self):
 
@@ -68,7 +62,6 @@ class MiniGamePage(QWidget):
         players = QHBoxLayout()
 
         for player in self.players:
-
             card = PlayerCard(
                 player,
                 f"assets/images/players/{player.lower()}.png"
@@ -217,7 +210,6 @@ class GameWidget(QWidget):
         )
 
     def spawn_ball(self):
-
         self.ball = QPoint(
             random.randint(0, 750),
             0
@@ -225,7 +217,6 @@ class GameWidget(QWidget):
 
 
     def update_game(self):
-
         # Smooth movement
         if (
             Qt.Key.Key_A in self.keys
@@ -237,7 +228,6 @@ class GameWidget(QWidget):
             or Qt.Key.Key_Right in self.keys
         ):
             self.player_x += self.player_speed
-
 
         # Keep basket on screen
         self.player_x = max(
@@ -261,7 +251,6 @@ class GameWidget(QWidget):
             if self.lives <= 0:
                 self.game_over()
 
-
         # Catch
         if (
             420 < self.ball.y() < 460
@@ -280,31 +269,26 @@ class GameWidget(QWidget):
         self.update()
 
     def update_ui(self):
-
         self.score_label.setText(
             f"Score: {self.score}   Lives: {self.lives}"
         )
 
     def keyPressEvent(self, event):
-
         self.keys.add(
             event.key()
         )
 
     def keyReleaseEvent(self, event):
-
         self.keys.discard(
             event.key()
         )
 
     def game_over(self):
-
         self.timer.stop()
         self.parent.score = self.score
         self.parent.game_over()
 
     def paintEvent(self,event):
-
         painter = QPainter(self)
         # Ball
         painter.setBrush(

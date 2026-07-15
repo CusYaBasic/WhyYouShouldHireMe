@@ -1,7 +1,4 @@
-from PySide6.QtWidgets import QWidget, QPushButton, QHBoxLayout, QLabel
-from PySide6.QtCore import Qt, QPropertyAnimation, QPoint
-from PySide6.QtGui import QPixmap
-
+from PySide6.QtWidgets import  QPushButton
 
 class HoverCloseButton(QPushButton):
     def __init__(self, title_bar):

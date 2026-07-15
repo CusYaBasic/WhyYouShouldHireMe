@@ -16,11 +16,9 @@ class RoundedButton(QPushButton):
                 border-radius: 15px;
                 padding: 10px 20px;
             }
-
             QPushButton:hover {
                 background-color: #444444;
             }
-
             QPushButton:pressed {
                 background-color: #222222;
             }

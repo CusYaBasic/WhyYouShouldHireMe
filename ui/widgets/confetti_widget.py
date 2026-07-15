@@ -1,3 +1,5 @@
+# this class was created by AI as I couldn't find a good way of doing this
+
 import random
 
 from PySide6.QtWidgets import QWidget, QFrame

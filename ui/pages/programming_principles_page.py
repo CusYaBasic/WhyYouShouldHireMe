@@ -14,7 +14,6 @@ class ProgrammingPrinciplesPage(SlideshowPage):
                     "than rewriting functionality. Components, inheritance and clean "
                     "interfaces help keep projects maintainable."
             },
-
             {
                 "image": "assets/images/programming/clean_code.png",
                 "title": "Clean Code",
@@ -23,7 +22,6 @@ class ProgrammingPrinciplesPage(SlideshowPage):
                     "I focus on meaningful names, organised structures and avoiding "
                     "unnecessary complexity."
             },
-
             {
                 "image": "assets/images/programming/debugging.png",
                 "title": "Problem Solving",
@@ -32,7 +30,6 @@ class ProgrammingPrinciplesPage(SlideshowPage):
                     "the problem, identifying the cause and testing solutions instead "
                     "of relying on trial and error."
             },
-
             {
                 "image": "assets/images/programming/performance.png",
                 "title": "Performance Awareness",
@@ -41,7 +38,6 @@ class ProgrammingPrinciplesPage(SlideshowPage):
                     "where optimisation, memory usage and efficient updates can have "
                     "a significant impact."
             },
-
             {
                 "image": "assets/images/programming/testing.png",
                 "title": "Testing & Iteration",
@@ -50,7 +46,6 @@ class ProgrammingPrinciplesPage(SlideshowPage):
                     "iterating based on feedback and continuously improving systems."
             }
         ]
-
 
         super().__init__(
             slides

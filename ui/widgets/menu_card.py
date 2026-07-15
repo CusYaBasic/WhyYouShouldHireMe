@@ -4,7 +4,6 @@ from PySide6.QtGui import QPixmap
 from PySide6.QtMultimedia import QMediaPlayer, QAudioOutput
 from PySide6.QtCore import QUrl
 
-
 class MenuCard(QWidget):
 
     clicked = Signal()
@@ -13,32 +12,25 @@ class MenuCard(QWidget):
         super().__init__()
 
         self.setFixedSize(250, 250)
-
         self.image = QLabel()
         pixmap = QPixmap(image)
-
         self.image.setPixmap(
             pixmap.scaled(
                 100,
                 100
             )
         )
-
         self.image.setFixedHeight(110)
-
         self.title = QLabel(title)
         self.description = QLabel(description)
-
         self.title.setStyleSheet("""
             font-size: 20px;
             font-weight: bold;
             color: white;
         """)
-
         self.description.setStyleSheet("""
             color: #bbbbbb;
         """)
-
         layout = QVBoxLayout(self)
 
         layout.addWidget(self.image)
@@ -47,12 +39,10 @@ class MenuCard(QWidget):
 
         # Click sound
         self.audio_output = QAudioOutput()
-
         self.click_sound = QMediaPlayer()
         self.click_sound.setAudioOutput(
             self.audio_output
         )
-
         self.click_sound.setSource(
             QUrl.fromLocalFile(
                 "assets/sounds/button_click.mp3"
@@ -66,7 +56,6 @@ class MenuCard(QWidget):
                 background: #202020;
                 border-radius: 15px;
             }
-
             QWidget:hover {
                 background: #303030;
             }
@@ -75,7 +64,6 @@ class MenuCard(QWidget):
     def mousePressEvent(self, event):
         self.click_sound.stop()
         self.click_sound.play()
-
         self.clicked.emit()
 
         super().mousePressEvent(event)

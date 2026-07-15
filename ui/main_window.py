@@ -6,7 +6,6 @@ from PySide6.QtWidgets import (
 )
 
 from PySide6.QtCore import Qt
-
 from ui.pages.home_page import HomePage
 from ui.pages.sections_page import SectionsPage
 from ui.pages.why_hire_page import WhyHirePage
@@ -18,9 +17,7 @@ from ui.pages.programming_principles_page import ProgrammingPrinciplesPage
 from ui.pages.inventory_forecast_page import InventoryForecastPage
 from ui.pages.mind_reader_page import MindReaderPage
 from ui.pages.hire_lewis_page import HireLewisPage
-
 from ui.widgets.title_bar import TitleBar
-
 
 class MainWindow(QMainWindow):
 
@@ -37,58 +34,46 @@ class MainWindow(QMainWindow):
             "Mind Reader": False,
             "Mini Game": False
         }
-
         self.setWindowTitle(
             "Why You Should Hire Me"
         )
-
         self.resize(
             1280,
             720
         )
-
         self.setWindowFlags(
             Qt.WindowType.FramelessWindowHint
         )
-
 
         central = QWidget()
         self.setCentralWidget(
             central
         )
 
-
         layout = QVBoxLayout()
-
         layout.setContentsMargins(
             0,
             0,
             0,
             0
         )
-
         layout.setSpacing(
             0
         )
-
         central.setLayout(
             layout
         )
-
 
         # Custom title bar
         self.title_bar = TitleBar(
             self
         )
-
         layout.addWidget(
             self.title_bar
         )
 
-
         # Page container
         self.pages = QStackedWidget()
-
 
         # Create pages
         self.home_page = HomePage()
@@ -103,7 +88,6 @@ class MainWindow(QMainWindow):
         self.mind_reader_page = MindReaderPage()
         self.hire_lewis_page = HireLewisPage()
 
-
         self.why_hire_page.finished.connect(
             self.open_sections
         )
@@ -114,58 +98,44 @@ class MainWindow(QMainWindow):
         self.pages.addWidget(
             self.home_page
         )
-
         self.pages.addWidget(
             self.sections_page
         )
-
         self.pages.addWidget(
             self.why_hire_page
         )
-
         self.pages.addWidget(
             self.strengths_page
         )
-
         self.pages.addWidget(
             self.weaknesses_page
         )
-
         self.pages.addWidget(
             self.mini_game_page
         )
-
         self.pages.addWidget(
             self.previous_work_page
         )
-
         self.pages.addWidget(
             self.programming_principles_page
         )
-
         self.pages.addWidget(
             self.inventory_page
         )
-
         self.pages.addWidget(
             self.mind_reader_page
         )
-
         self.pages.addWidget(
             self.mini_game_page
         )
-
         self.pages.addWidget(
             self.hire_lewis_page
         )
-
         layout.addWidget(
             self.pages
         )
 
-
         # Navigation signals
-
         self.home_page.hire_clicked.connect(
             self.open_sections
         )
@@ -221,13 +191,11 @@ class MainWindow(QMainWindow):
             lambda:
             self.unlock_section("Mind Reader")
         )
-
         self.mind_reader_page.back_clicked.connect(
             self.open_final_page
         )
 
     def unlock_section(self, section):
-
         if section in self.unlocked_sections:
             self.unlocked_sections[section] = True
 
@@ -236,7 +204,6 @@ class MainWindow(QMainWindow):
         )
 
     def open_sections(self):
-
         current_page = self.pages.currentWidget()
 
         if hasattr(current_page, "reset"):
@@ -248,14 +215,12 @@ class MainWindow(QMainWindow):
 
 
     def open_home(self):
-
         self.pages.setCurrentWidget(
             self.home_page
         )
 
 
     def open_page(self, page_name):
-
         pages = {
             "why_hire_page":
                 self.why_hire_page,
@@ -275,11 +240,9 @@ class MainWindow(QMainWindow):
                 self.mind_reader_page,
             "hire_lewis_page":
                 self.hire_lewis_page
-
         }
 
         if page_name in pages:
-
             page = pages[page_name]
 
             if hasattr(page, "reset"):
@@ -288,7 +251,6 @@ class MainWindow(QMainWindow):
             self.pages.setCurrentWidget(page)
 
     def open_final_page(self):
-
         self.hire_lewis_page.reset()
 
         self.pages.setCurrentWidget(
