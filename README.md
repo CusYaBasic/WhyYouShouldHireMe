@@ -9,3 +9,20 @@ An app for tcgroup to demostrate personality and techincal skills
 * Used inheritance to extend Qt widgets
 * Implemented signals and slots for communication between components
 * Managed application state and page navigation
+
+## PySide6 / Qt Framework
+* Developed a custom GUI application using PySide6
+* Created custom widgets:
+ * Rounded image labels
+ * Custom buttons
+ * Animated buttons
+ * Custom title bar
+ * Interactive menu cards
+ * Built a frameless application window
+ * Created a custom Windows-style title bar
+* Implemented:
+ * Hover events
+ * Click events
+ * Mouse event handling
+ * Widget positioning
+ * Layout management
