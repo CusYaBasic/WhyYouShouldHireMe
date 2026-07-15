@@ -26,6 +26,17 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
+        self.unlocked_sections = {
+            "Why Hire Me": True,
+            "Strengths": False,
+            "Weaknesses": False,
+            "Previous Work": False,
+            "Programming\nPrinciples": False,
+            "Inventory Demo": False,
+            "Mind Reader": False,
+            "Mini Game": False
+        }
+
         self.setWindowTitle(
             "Why You Should Hire Me"
         )
@@ -94,7 +105,9 @@ class MainWindow(QMainWindow):
         self.why_hire_page.finished.connect(
             self.open_sections
         )
-
+        self.sections_page.update_unlocks(
+            self.unlocked_sections
+        )
         # Add pages
         self.pages.addWidget(
             self.home_page
@@ -146,14 +159,22 @@ class MainWindow(QMainWindow):
         self.home_page.hire_clicked.connect(
             self.open_sections
         )
+        self.why_hire_page.finished.connect(
+            lambda:
+            self.unlock_section("Strengths")
+        )
         self.strengths_page.finished.connect(
-            self.open_sections
+            self.open_sections,
+            lambda:
+            self.unlock_section("Weaknesses")
         )
         self.sections_page.home_clicked.connect(
             self.open_home
         )
         self.weaknesses_page.finished.connect(
-            self.open_sections
+            self.open_sections,
+            lambda:
+            self.unlock_section("Previous Work")
         )
         self.sections_page.open_page.connect(
             self.open_page
@@ -162,16 +183,37 @@ class MainWindow(QMainWindow):
             self.open_sections
         )
         self.previous_work_page.finished.connect(
-            self.open_sections
+            self.open_sections,
+            lambda:
+            self.unlock_section("Programming\nPrinciples")
         )
         self.programming_principles_page.finished.connect(
-            self.open_sections
+            self.open_sections,
+            lambda:
+            self.unlock_section("Inventory Demo")
         )
         self.inventory_page.back_clicked.connect(
             self.open_sections
         )
+        self.inventory_page.back_clicked.connect(
+            lambda:
+            self.unlock_section("Mind Reader")
+        )
         self.mind_reader_page.back_clicked.connect(
             self.open_sections
+        )
+        self.mind_reader_page.back_clicked.connect(
+            lambda:
+            self.unlock_section("Mini Game")
+        )
+
+    def unlock_section(self, section):
+
+        if section in self.unlocked_sections:
+            self.unlocked_sections[section] = True
+
+        self.sections_page.update_unlocks(
+            self.unlocked_sections
         )
 
     def open_sections(self):

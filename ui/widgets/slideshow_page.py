@@ -83,6 +83,13 @@ class SlideshowPage(QWidget):
 
 
         layout = QVBoxLayout(self)
+        layout.setSpacing(5)
+        layout.setContentsMargins(
+            20,
+            20,
+            20,
+            20
+        )
 
         layout.addWidget(
             self.image

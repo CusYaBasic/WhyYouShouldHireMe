@@ -29,11 +29,15 @@ class SectionsPage(QWidget):
         row = 0
         col = 0
 
+        self.buttons = {}
+
         for title, image in sections:
             button = ImageButton(
                 title,
                 image
             )
+
+            self.buttons[title] = button
 
             # Only change the Home button behaviour
             if title == "Home":
@@ -92,3 +96,12 @@ class SectionsPage(QWidget):
             if col == 3:
                 col = 0
                 row += 1
+
+    def update_unlocks(self, unlocks):
+
+        for title, button in self.buttons.items():
+
+            if title in unlocks:
+                button.setEnabled(
+                    unlocks[title]
+                )

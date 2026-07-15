@@ -127,6 +127,11 @@ class ImageButton(QPushButton):
             QPushButton:pressed {
                 border: 3px solid #aaaaaa;
             }
+            
+            QPushButton:disabled {
+                background: #151515;
+                border: 3px solid #222222;
+            }
         """)
 
 
