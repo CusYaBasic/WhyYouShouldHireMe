@@ -13,38 +13,38 @@ An app for tcgroup to demostrate personality and techincal skills
 ## PySide6 / Qt Framework
 * Developed a custom GUI application using PySide6
 * Created custom widgets:
- - Rounded image labels
- - Custom buttons
- - Animated buttons
- - Custom title bar
- - Interactive menu cards
- - Built a frameless application window
- - Created a custom Windows-style title bar
+  - Rounded image labels
+  - Custom buttons
+  - Animated buttons
+  - Custom title bar
+  - Interactive menu cards
+  - Built a frameless application window
+  - Created a custom Windows-style title bar
 * Implemented:
- - Hover events
- - Click events
- - Mouse event handling
- - Widget positioning
- - Layout management
+  - Hover events
+  - Click events
+  - Mouse event handling
+  - Widget positioning
+  - Layout management
 
 ## User Interface / UX Design
 * Designed a complete interactive portfolio experience
 Created:
- - Home screen
- - Section menu
- - Presentation/slideshow pages
- - Interactive demos
- - Final recruitment screen
+  - Home screen
+  - Section menu
+  - Presentation/slideshow pages
+  - Interactive demos
+  - Final recruitment screen
 * Implemented consistent UI styling with Qt Style Sheets (QSS)
 Created:
- - Rounded corners
- - Borders
- - Hover effects
- - Disabled states
- - Text outlines
- - Image overlays
+  - Rounded corners
+  - Borders
+  - Hover effects
+  - Disabled states
+  - Text outlines
+  - Image overlays
 * Designed responsive layouts using:
- - QVBoxLayout
- - QHBoxLayout
- - QGridLayout
- - QStackedWidget
+  - QVBoxLayout
+  - QHBoxLayout
+  - QGridLayout
+  - QStackedWidget
