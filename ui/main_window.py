@@ -164,7 +164,9 @@ class MainWindow(QMainWindow):
             self.unlock_section("Strengths")
         )
         self.strengths_page.finished.connect(
-            self.open_sections,
+            self.open_sections
+        )
+        self.strengths_page.finished.connect(
             lambda:
             self.unlock_section("Weaknesses")
         )
@@ -172,9 +174,11 @@ class MainWindow(QMainWindow):
             self.open_home
         )
         self.weaknesses_page.finished.connect(
-            self.open_sections,
+            self.open_sections
+        )
+        self.weaknesses_page.finished.connect(
             lambda:
-            self.unlock_section("Previous Work")
+            self.unlock_section("Mini Game")
         )
         self.sections_page.open_page.connect(
             self.open_page
@@ -182,13 +186,21 @@ class MainWindow(QMainWindow):
         self.mini_game_page.finished.connect(
             self.open_sections
         )
+        self.mini_game_page.finished.connect(
+            lambda:
+            self.unlock_section("Previous Work")
+        )
         self.previous_work_page.finished.connect(
-            self.open_sections,
+            self.open_sections
+        )
+        self.previous_work_page.finished.connect(
             lambda:
             self.unlock_section("Programming\nPrinciples")
         )
         self.programming_principles_page.finished.connect(
-            self.open_sections,
+            self.open_sections
+        )
+        self.programming_principles_page.finished.connect(
             lambda:
             self.unlock_section("Inventory Demo")
         )
