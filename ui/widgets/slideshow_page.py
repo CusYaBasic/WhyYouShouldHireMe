@@ -6,7 +6,6 @@ from PySide6.QtWidgets import (
     QHBoxLayout
 )
 from PySide6.QtGui import QPixmap
-from PySide6.QtCore import Qt
 from PySide6.QtCore import Qt, Signal
 
 class SlideshowPage(QWidget):

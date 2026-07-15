@@ -25,7 +25,7 @@ class PreviousWorkPage(SlideshowPage):
             },
 
             {
-                "image": "assets/images/work/lost_lands.png",
+                "image": "assets/images/work/lostlands.png",
                 "title": "Lost Lands",
                 "text":
                     "A 2D sandbox MMORPG project inspired by classic online RPGs. "
@@ -43,7 +43,7 @@ class PreviousWorkPage(SlideshowPage):
             },
 
             {
-                "image": "assets/images/work/tools.png",
+                "image": "assets/images/work/developer_tools.png",
                 "title": "Developer Tools",
                 "text":
                     "I enjoy building tools that improve workflows, including custom "

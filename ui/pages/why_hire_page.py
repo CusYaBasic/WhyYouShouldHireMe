@@ -56,7 +56,7 @@ class WhyHirePage(SlideshowPage):
             },
 
             {
-                "image": "assets/images/memes/duck.png",
+                "image": "assets/images/memes/duck.jpg",
                 "title": "Debug Duck",
                 "text":
                     "If talking to a rubber duck fixes bugs...\nImagine what I can do with an actual team."
