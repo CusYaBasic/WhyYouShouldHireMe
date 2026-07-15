@@ -17,6 +17,7 @@ from ui.pages.previous_work_page import PreviousWorkPage
 from ui.pages.programming_principles_page import ProgrammingPrinciplesPage
 from ui.pages.inventory_forecast_page import InventoryForecastPage
 from ui.pages.mind_reader_page import MindReaderPage
+from ui.pages.hire_lewis_page import HireLewisPage
 
 from ui.widgets.title_bar import TitleBar
 
@@ -100,6 +101,7 @@ class MainWindow(QMainWindow):
         self.programming_principles_page = ProgrammingPrinciplesPage()
         self.inventory_page = InventoryForecastPage()
         self.mind_reader_page = MindReaderPage()
+        self.hire_lewis_page = HireLewisPage()
 
 
         self.why_hire_page.finished.connect(
@@ -147,6 +149,14 @@ class MainWindow(QMainWindow):
 
         self.pages.addWidget(
             self.mind_reader_page
+        )
+
+        self.pages.addWidget(
+            self.mini_game_page
+        )
+
+        self.pages.addWidget(
+            self.hire_lewis_page
         )
 
         layout.addWidget(
@@ -211,12 +221,9 @@ class MainWindow(QMainWindow):
             lambda:
             self.unlock_section("Mind Reader")
         )
+
         self.mind_reader_page.back_clicked.connect(
-            self.open_sections
-        )
-        self.mind_reader_page.back_clicked.connect(
-            lambda:
-            self.unlock_section("Mini Game")
+            self.open_final_page
         )
 
     def unlock_section(self, section):
@@ -266,7 +273,8 @@ class MainWindow(QMainWindow):
                 self.inventory_page,
             "mind_reader_page":
                 self.mind_reader_page,
-
+            "hire_lewis_page":
+                self.hire_lewis_page
 
         }
 
@@ -278,3 +286,11 @@ class MainWindow(QMainWindow):
                 page.reset()
 
             self.pages.setCurrentWidget(page)
+
+    def open_final_page(self):
+
+        self.hire_lewis_page.reset()
+
+        self.pages.setCurrentWidget(
+            self.hire_lewis_page
+        )
