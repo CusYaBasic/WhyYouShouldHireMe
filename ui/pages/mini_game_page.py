@@ -198,6 +198,22 @@ class GameWidget(QWidget):
             20,
             20
         )
+        self.controls_label = QLabel(
+            "Controls: A / D or Left / Right to move",
+            self
+        )
+        self.controls_label.setFixedWidth(
+            360
+        )
+        self.controls_label.setStyleSheet("""
+            color: #555555;
+            font-size: 14px;
+            font-weight: bold;
+        """)
+        self.controls_label.move(
+            20,
+            50
+        )
         self.timer = QTimer()
         self.timer.timeout.connect(
             self.update_game
