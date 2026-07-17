@@ -141,3 +141,15 @@ Multiple user profiles:
   - Sounds
   - UI assets
 * Created organised project structure
+
+## Notes
+A few things were made by AI that I feel I should mention
+
+path.py:
+When building the application into a .exe, Images were not showing. I used Pycharm IDE and although the pathing worked in there, It did not in the build. AI created the path.py script and I simply updated any QPixmaps to use the AI created resource path.
+
+confetti_widget.py:
+This one scratched my brain a bit, So I asked AI a few questions and it generated me this script without asking, so out of curiosity I used it too see what it was like and it was better than expected so I left it in.
+
+title_bar.py:
+I wanted to bind to the Windows Title Bar buttons but according to AI that isn't a possibility so once again AI generated this script and out of curiosity I just rolled with it. I also had an issue with the jesus easter egg only showing on one page, So AI made it a part of this class.
